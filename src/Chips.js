@@ -88,8 +88,7 @@ class Chips extends Component {
       return (
         React.cloneElement(this.props.renderChip(chip), {
           selected: this.state.chipSelected && idx === this.props.value.length - 1,
-          onRemove: this.removeChip(idx),
-          index: idx,
+          onRequestDelete: this.removeChip(idx),
           key: `chip${idx}`,
         })
       );

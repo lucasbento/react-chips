@@ -4,14 +4,14 @@ import Radium from 'radium';
 import themeable from 'react-themeable';
 import { chipTheme } from './theme';
 
-const Chip = ({ selected, theme, onRemove, children }) => {
+const Chip = ({ selected, theme, onRequestDelete, children }) => {
   const themr = themeable(theme);
   return (
     <div {...themr(1, 'chip', selected  ? 'chipSelected' : '')}>
       {children}
       <span
         {...themr(2, 'chipRemove')}
-        onClick={onRemove}> &times;</span>
+        onClick={onRequestDelete}> &times;</span>
     </div>
   );
 }
@@ -19,7 +19,7 @@ const Chip = ({ selected, theme, onRemove, children }) => {
 Chip.propTypes = {
   theme: PropTypes.object,
   selected: PropTypes.bool,
-  onRemove: PropTypes.func,
+  onRequestDelete: PropTypes.func,
 }
 
 Chip.defaultProps = {

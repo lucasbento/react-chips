@@ -7,7 +7,7 @@ class CustomChip extends Component {
       <div style={this.props.selected ? {...styles.container, ...styles.selected} : styles.container}>
         <img style={styles.image} src={this.props.image} />
         <div style={styles.text}>{this.props.children}</div>
-        <div style={styles.remove} onClick={() => this.props.onRemove(this.props.index)}>&times;</div>
+        <div style={styles.remove} onClick={() => this.props.onRequestDelete(this.props.index)}>&times;</div>
       </div>
     );
   }
